@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<DOCTYPE html>
 <html>
 <head>
     <title>Student Connect</title>
@@ -46,10 +46,11 @@
     <h2>Advertise Your Service</h2>
   <h3>List Your Service</h3>
 
-<form>
-    <p>
+<form onsubmit="sendToWhatsApp(); return false;">
+  <p>
         <label>Your Name</label><br>
         <input type="text" placeholder="Enter your name">
+    
     </p>
 
     <p>
@@ -68,7 +69,7 @@
     </p>
 
     <button type="button">Submit Service</button>
-</form>
+</>
 
     <p>Want more students to find your service?</p>
     <p>List your business on Student Connect.</p>
@@ -85,6 +86,21 @@
 
     <h3>🏠 Student Accommodation</h3>
     <a href="https://wa.me/2349132756617">Find Accommodation</a>
+<script>
+function sendToWhatsApp() {
+    var name = document.getElementById("name").value;
+    var service = document.getElementById("service").value;
+    var phone = document.getElementById("phone").value;
+    var location = document.getElementById("location").value;
 
+    var message = "New Student Connect Listing%0A%0A" +
+        "Name: " + encodeURIComponent(name) + "%0A" +
+        "Service: " + encodeURIComponent(service) + "%0A" +
+        "WhatsApp: " + encodeURIComponent(phone) + "%0A" +
+        "Location: " + encodeURIComponent(location);
+
+    window.open("https://wa.me/2349132756617?text=" + message, "_blank");
+}
+</script>
 </body>
 </html>
