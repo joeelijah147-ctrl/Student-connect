@@ -1,126 +1,578 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Student Connect</title>
 
     <style>
-        body {
-            font-family: Arial;
-            padding: 20px;
-        }
 
-        input {
-            width: 100%;
-            padding: 10px;
-            margin: 5px 0;
+        * {
             box-sizing: border-box;
         }
 
-        button, a {
-            display: inline-block;
-            padding: 10px;
-            margin: 5px 0;
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #222;
         }
+
+        header {
+            background: #123c69;
+            color: white;
+            padding: 35px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        header p {
+            margin-top: 10px;
+            font-size: 17px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 25px 15px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin: 35px 0 20px;
+            color: #123c69;
+        }
+
+        .card {
+            background: white;
+            padding: 22px;
+            margin: 18px 0;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: #123c69;
+        }
+
+        .price {
+            font-size: 22px;
+            font-weight: bold;
+            color: #16803a;
+        }
+
+        .featured {
+            border: 2px solid #f0b429;
+        }
+
+        .button {
+            display: inline-block;
+            background: #16803a;
+            color: white;
+            text-decoration: none;
+            padding: 12px 18px;
+            border-radius: 7px;
+            margin-top: 8px;
+            font-weight: bold;
+        }
+
+        .button:hover {
+            opacity: 0.9;
+        }
+
+        .blue-button {
+            background: #123c69;
+        }
+
+        .gold-button {
+            background: #d89216;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 13px;
+            margin-top: 6px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 7px;
+            font-size: 15px;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 7px;
+            background: #16803a;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .hero-button {
+            background: white;
+            color: #123c69;
+            margin-top: 15px;
+        }
+
+        footer {
+            background: #123c69;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 40px;
+        }
+
+        .small-text {
+            color: #666;
+            font-size: 14px;
+        }
+
+        @media (max-width: 600px) {
+
+            header h1 {
+                font-size: 29px;
+            }
+
+            header p {
+                font-size: 15px;
+            }
+
+            .card {
+                padding: 18px;
+            }
+
+        }
+
     </style>
 </head>
 
+
 <body>
 
-    <h1>Student Connect</h1>
 
-    <p>Find useful services for students in one place.</p>
+<header>
 
-    <h2>Services</h2>
+    <h1>🎓 Student Connect</h1>
 
-    <p>📚 Tutoring</p>
-    <a href="https://wa.me/2349132756617">Find a Tutor</a>
+    <p>
+        Connecting students, businesses and useful services in one place.
+    </p>
 
-    <h3>Available Tutor</h3>
-    <p>Maths & Physics Tutor</p>
-    <p>Available for secondary school students.</p>
-    <a href="https://wa.me/2348149239500">Contact Tutor</a>
+    <a href="#services" class="button hero-button">
+        Explore Services
+    </a>
 
-
-    <h2>Featured Services</h2>
-
-    <h3>📱 Phone Repair</h3>
-    <p>Screen replacement, battery replacement and phone repairs.</p>
-    <a href="https://wa.me/2349132756617">Contact Provider</a>
-
-    <h3>💻 Laptop Repair</h3>
-    <p>Laptop repairs, software installation and troubleshooting.</p>
-    <a href="https://wa.me/2349132756617">Contact Provider</a>
+</header>
 
 
-    <h2>Advertise Your Service</h2>
-
-    <p>Want more students to find your service?</p>
-    <p>List your business on Student Connect.</p>
-    <p>Featured listing: ₦1,000</p>
-
-    <a href="https://wa.me/2349132756617">Contact us to advertise</a>
+<div class="container">
 
 
-    <h2>List Your Service</h2>
+    <!-- STUDENT SERVICES -->
 
-    <form onsubmit="sendToWhatsApp(); return false;">
+    <h2 class="section-title" id="services">
+        🎓 Student Services
+    </h2>
+
+
+    <div class="card">
+
+        <h3>📚 Tutoring</h3>
 
         <p>
-            <label>Your Name</label><br>
-            <input id="name" type="text" placeholder="Enter your name" required>
+            Find tutors who can help with your academic needs.
+        </p>
+
+        <h4>Available Tutor</h4>
+
+        <p>
+            <strong>Maths & Physics Tutor</strong>
+        </p>
+
+        <p class="small-text">
+            Available for secondary school students.
+        </p>
+
+        <a href="https://wa.me/2348149239500" class="button">
+            Contact Tutor
+        </a>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>📱 Phone Repair</h3>
+
+        <p>
+            Screen replacement, battery replacement and phone repairs.
+        </p>
+
+        <a href="https://wa.me/2349132756617" class="button">
+            Contact Provider
+        </a>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>💻 Laptop Repair</h3>
+
+        <p>
+            Laptop repairs, software installation and troubleshooting.
+        </p>
+
+        <a href="https://wa.me/2349132756617" class="button">
+            Contact Provider
+        </a>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>💻 Computer Services</h3>
+
+        <p>
+            Get help with computer-related services.
+        </p>
+
+        <a href="https://wa.me/2349132756617" class="button">
+            Get Computer Help
+        </a>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>🖨️ Printing & Typing</h3>
+
+        <p>
+            Find printing and typing services.
+        </p>
+
+        <a href="https://wa.me/2349132756617" class="button">
+            Find Printing Service
+        </a>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>🏠 Student Accommodation</h3>
+
+        <p>
+            Find student accommodation and housing information.
+        </p>
+
+        <a href="https://wa.me/2349132756617" class="button">
+            Find Accommodation
+        </a>
+
+    </div>
+
+
+
+    <!-- LISTING PLANS -->
+
+    <h2 class="section-title">
+        📋 Service Listings
+    </h2>
+
+
+    <div class="card">
+
+        <h3>🆓 Basic Listing</h3>
+
+        <p class="price">
+            FREE
         </p>
 
         <p>
-            <label>Service</label><br>
-            <input id="service" type="text" placeholder="What service do you offer?" required>
+            List your service or business on Student Connect
+            at no cost.
+        </p>
+
+        <a href="#list-service" class="button blue-button">
+            Get Free Listing
+        </a>
+
+    </div>
+
+
+    <div class="card featured">
+
+        <h3>⭐ Featured Listing</h3>
+
+        <p class="price">
+            ₦2,000
         </p>
 
         <p>
-            <label>WhatsApp Number</label><br>
-            <input id="phone" type="tel" placeholder="Enter your WhatsApp number" required>
+            Get your service highlighted so more people
+            can discover it.
+        </p>
+
+        <a
+            href="https://wa.me/2349132756617?text=Hello%20Student%20Connect,%20I%20want%20a%20Featured%20Listing%20for%20%E2%82%A62,000."
+            class="button gold-button">
+
+            Get Featured — ₦2,000
+
+        </a>
+
+    </div>
+
+
+
+    <!-- COMPANY ADVERTISING -->
+
+    <h2 class="section-title">
+        🏢 Business Advertising
+    </h2>
+
+
+    <div class="card">
+
+        <h3>📢 Company & Product Advertising</h3>
+
+        <p class="price">
+            $100
         </p>
 
         <p>
-            <label>Location</label><br>
-            <input id="location" type="text" placeholder="Where are you located?" required>
+            Promote your company, product or service
+            through Student Connect.
         </p>
 
-        <button type="submit">Submit Service</button>
+        <a
+            href="https://wa.me/2349132756617?text=Hello%20Student%20Connect,%20I%20want%20to%20advertise%20my%20company%20or%20product."
+            class="button">
 
-    </form>
+            Advertise My Product
 
+        </a>
 
-    <h3>💻 Computer Services</h3>
-    <a href="https://wa.me/2349132756617">Get Computer Help</a>
-
-    <h3>🖨️ Printing & Typing</h3>
-    <a href="https://wa.me/2349132756617">Find Printing Service</a>
-
-    <h3>🏠 Student Accommodation</h3>
-    <a href="https://wa.me/2349132756617">Find Accommodation</a>
+    </div>
 
 
-    <script>
-        function sendToWhatsApp() {
 
-            var name = document.getElementById("name").value;
-            var service = document.getElementById("service").value;
-            var phone = document.getElementById("phone").value;
-            var location = document.getElementById("location").value;
+    <!-- FACEBOOK -->
 
-            var message =
-                "New Student Connect Service Listing%0A%0A" +
-                "Name: " + encodeURIComponent(name) + "%0A" +
-                "Service: " + encodeURIComponent(service) + "%0A" +
-                "WhatsApp: " + encodeURIComponent(phone) + "%0A" +
-                "Location: " + encodeURIComponent(location);
+    <div class="card">
 
-            window.open(
-                "https://wa.me/2349132756617?text=" + message,
-                "_blank"
-            );
-        }
-    </script>
+        <h3>📱 Facebook Page Creation</h3>
+
+        <p>
+            Need a Facebook Page for your business,
+            organization or brand?
+        </p>
+
+        <p>
+            We can help create and set up your page.
+        </p>
+
+        <a
+            href="https://wa.me/2349132756617?text=Hello%20Student%20Connect,%20I%20need%20help%20creating%20a%20Facebook%20Page."
+            class="button blue-button">
+
+            Create My Facebook Page
+
+        </a>
+
+    </div>
+
+
+
+    <!-- SERVICE FORM -->
+
+    <h2 class="section-title" id="list-service">
+        📝 List Your Service
+    </h2>
+
+
+    <div class="card">
+
+        <p>
+            Submit your service or business details.
+            <strong>Basic listing is FREE.</strong>
+        </p>
+
+
+        <form onsubmit="sendToWhatsApp(); return false;">
+
+            <label>Your Name</label>
+
+            <input
+                id="name"
+                type="text"
+                placeholder="Enter your name"
+                required>
+
+
+            <label>Service or Business Name</label>
+
+            <input
+                id="service"
+                type="text"
+                placeholder="What service do you offer?"
+                required>
+
+
+            <label>WhatsApp Number</label>
+
+            <input
+                id="phone"
+                type="tel"
+                placeholder="Enter your WhatsApp number"
+                required>
+
+
+            <label>Location</label>
+
+            <input
+                id="location"
+                type="text"
+                placeholder="Where are you located?"
+                required>
+
+
+            <label>Short Description</label>
+
+            <textarea
+                id="description"
+                rows="4"
+                placeholder="Describe your service or business"
+                required></textarea>
+
+
+            <button type="submit">
+                Submit Free Listing
+            </button>
+
+        </form>
+
+    </div>
+
+
+
+    <!-- CONTACT -->
+
+    <h2 class="section-title">
+        📞 Contact Us
+    </h2>
+
+
+    <div class="card">
+
+        <p>
+            Have a question, want to advertise,
+            or need help with a service?
+        </p>
+
+        <a
+            href="https://wa.me/2349132756617"
+            class="button">
+
+            Contact Student Connect
+
+        </a>
+
+    </div>
+
+
+</div>
+
+
+
+<footer>
+
+    <p>
+        © 2026 Student Connect
+    </p>
+
+    <p>
+        Connecting students, businesses and services.
+    </p>
+
+</footer>
+
+
+
+<script>
+
+function sendToWhatsApp() {
+
+    var name =
+        document.getElementById("name").value;
+
+    var service =
+        document.getElementById("service").value;
+
+    var phone =
+        document.getElementById("phone").value;
+
+    var location =
+        document.getElementById("location").value;
+
+    var description =
+        document.getElementById("description").value;
+
+
+    var message =
+        "NEW FREE STUDENT CONNECT LISTING%0A%0A" +
+
+        "Name: " +
+        encodeURIComponent(name) +
+        "%0A" +
+
+        "Service/Business: " +
+        encodeURIComponent(service) +
+        "%0A" +
+
+        "WhatsApp: " +
+        encodeURIComponent(phone) +
+        "%0A" +
+
+        "Location: " +
+        encodeURIComponent(location) +
+        "%0A" +
+
+        "Description: " +
+        encodeURIComponent(description);
+
+
+    window.open(
+        "https://wa.me/2349132756617?text=" +
+        message,
+        "_blank"
+    );
+
+}
+
+</script>
+
 
 </body>
 </html>
