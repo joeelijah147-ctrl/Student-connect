@@ -1,4 +1,4 @@
-<DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Student Connect</title>
@@ -7,6 +7,13 @@
         body {
             font-family: Arial;
             padding: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            box-sizing: border-box;
         }
 
         button, a {
@@ -33,6 +40,7 @@
     <p>Available for secondary school students.</p>
     <a href="https://wa.me/2348149239500">Contact Tutor</a>
 
+
     <h2>Featured Services</h2>
 
     <h3>📱 Phone Repair</h3>
@@ -43,40 +51,44 @@
     <p>Laptop repairs, software installation and troubleshooting.</p>
     <a href="https://wa.me/2349132756617">Contact Provider</a>
 
+
     <h2>Advertise Your Service</h2>
-  <h3>List Your Service</h3>
-
-<form onsubmit="sendToWhatsApp(); return false;">
-  <p>
-        <label>Your Name</label><br>
-        <input type="text" placeholder="Enter your name">
-    
-    </p>
-
-    <p>
-        <label>Service</label><br>
-        <input type="text" placeholder="What service do you offer?">
-    </p>
-
-    <p>
-        <label>WhatsApp Number</label><br>
-        <input type="tel" placeholder="Enter your WhatsApp number">
-    </p>
-
-    <p>
-        <label>Location</label><br>
-        <input type="text" placeholder="Where are you located?">
-    </p>
-
-    <button type="button">Submit Service</button>
-</>
 
     <p>Want more students to find your service?</p>
     <p>List your business on Student Connect.</p>
-
     <p>Featured listing: ₦1,000</p>
 
-    <a href="https://wa.me/2349132756617">Advertise Your Service</a>
+    <a href="https://wa.me/2349132756617">Contact us to advertise</a>
+
+
+    <h2>List Your Service</h2>
+
+    <form onsubmit="sendToWhatsApp(); return false;">
+
+        <p>
+            <label>Your Name</label><br>
+            <input id="name" type="text" placeholder="Enter your name" required>
+        </p>
+
+        <p>
+            <label>Service</label><br>
+            <input id="service" type="text" placeholder="What service do you offer?" required>
+        </p>
+
+        <p>
+            <label>WhatsApp Number</label><br>
+            <input id="phone" type="tel" placeholder="Enter your WhatsApp number" required>
+        </p>
+
+        <p>
+            <label>Location</label><br>
+            <input id="location" type="text" placeholder="Where are you located?" required>
+        </p>
+
+        <button type="submit">Submit Service</button>
+
+    </form>
+
 
     <h3>💻 Computer Services</h3>
     <a href="https://wa.me/2349132756617">Get Computer Help</a>
@@ -86,21 +98,29 @@
 
     <h3>🏠 Student Accommodation</h3>
     <a href="https://wa.me/2349132756617">Find Accommodation</a>
-<script>
-function sendToWhatsApp() {
-    var name = document.getElementById("name").value;
-    var service = document.getElementById("service").value;
-    var phone = document.getElementById("phone").value;
-    var location = document.getElementById("location").value;
 
-    var message = "New Student Connect Listing%0A%0A" +
-        "Name: " + encodeURIComponent(name) + "%0A" +
-        "Service: " + encodeURIComponent(service) + "%0A" +
-        "WhatsApp: " + encodeURIComponent(phone) + "%0A" +
-        "Location: " + encodeURIComponent(location);
 
-    window.open("https://wa.me/2349132756617?text=" + message, "_blank");
-}
-</script>
+    <script>
+        function sendToWhatsApp() {
+
+            var name = document.getElementById("name").value;
+            var service = document.getElementById("service").value;
+            var phone = document.getElementById("phone").value;
+            var location = document.getElementById("location").value;
+
+            var message =
+                "New Student Connect Service Listing%0A%0A" +
+                "Name: " + encodeURIComponent(name) + "%0A" +
+                "Service: " + encodeURIComponent(service) + "%0A" +
+                "WhatsApp: " + encodeURIComponent(phone) + "%0A" +
+                "Location: " + encodeURIComponent(location);
+
+            window.open(
+                "https://wa.me/2349132756617?text=" + message,
+                "_blank"
+            );
+        }
+    </script>
+
 </body>
 </html>
