@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Student Connect</title>
+    <title>Student Connect | Global Services & Business Platform</title>
 
     <style>
 
@@ -23,35 +23,55 @@
         header {
             background: #123c69;
             color: white;
-            padding: 35px 20px;
             text-align: center;
+            padding: 50px 20px;
         }
 
         header h1 {
             margin: 0;
-            font-size: 36px;
+            font-size: 40px;
         }
 
         header p {
-            margin-top: 10px;
-            font-size: 17px;
+            font-size: 18px;
+            line-height: 1.6;
+            max-width: 700px;
+            margin: 15px auto;
+        }
+
+        .hero-button {
+            display: inline-block;
+            background: white;
+            color: #123c69;
+            text-decoration: none;
+            padding: 13px 22px;
+            border-radius: 8px;
+            margin-top: 15px;
+            font-weight: bold;
         }
 
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: auto;
             padding: 25px 15px;
         }
 
         .section-title {
             text-align: center;
-            margin: 35px 0 20px;
+            margin: 40px 0 20px;
             color: #123c69;
+        }
+
+        .intro {
+            text-align: center;
+            max-width: 750px;
+            margin: 0 auto 30px;
+            line-height: 1.7;
         }
 
         .card {
             background: white;
-            padding: 22px;
+            padding: 24px;
             margin: 18px 0;
             border-radius: 12px;
             box-shadow: 0 3px 12px rgba(0,0,0,0.08);
@@ -63,13 +83,13 @@
         }
 
         .price {
-            font-size: 22px;
+            font-size: 23px;
             font-weight: bold;
             color: #16803a;
         }
 
         .featured {
-            border: 2px solid #f0b429;
+            border: 2px solid #d89216;
         }
 
         .button {
@@ -83,10 +103,6 @@
             font-weight: bold;
         }
 
-        .button:hover {
-            opacity: 0.9;
-        }
-
         .blue-button {
             background: #123c69;
         }
@@ -95,8 +111,27 @@
             background: #d89216;
         }
 
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .service-box {
+            background: white;
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        }
+
+        .service-box h3 {
+            color: #123c69;
+            margin-top: 0;
+        }
+
         input,
-        textarea {
+        textarea,
+        select {
             width: 100%;
             padding: 13px;
             margin-top: 6px;
@@ -126,42 +161,51 @@
             cursor: pointer;
         }
 
-        .hero-button {
-            background: white;
-            color: #123c69;
-            margin-top: 15px;
+        .small-text {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .world {
+            text-align: center;
+            background: #eaf2fa;
+            padding: 25px;
+            border-radius: 12px;
+            margin-top: 25px;
         }
 
         footer {
             background: #123c69;
             color: white;
             text-align: center;
-            padding: 25px;
+            padding: 30px 20px;
             margin-top: 40px;
         }
 
-        .small-text {
-            color: #666;
-            font-size: 14px;
-        }
-
-        @media (max-width: 600px) {
+        @media (max-width: 700px) {
 
             header h1 {
-                font-size: 29px;
+                font-size: 30px;
             }
 
             header p {
-                font-size: 15px;
+                font-size: 16px;
             }
 
-            .card {
-                padding: 18px;
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .card,
+            .service-box {
+                padding: 19px;
             }
 
         }
 
     </style>
+
 </head>
 
 
@@ -170,14 +214,15 @@
 
 <header>
 
-    <h1>🎓 Student Connect</h1>
+    <h1>🌍 Student Connect</h1>
 
     <p>
-        Connecting students, businesses and useful services in one place.
+        Connecting people, students, businesses, companies,
+        organizations and service providers in one global platform.
     </p>
 
-    <a href="#services" class="button hero-button">
-        Explore Services
+    <a href="#services" class="hero-button">
+        Explore the Platform
     </a>
 
 </header>
@@ -186,119 +231,185 @@
 <div class="container">
 
 
-    <!-- STUDENT SERVICES -->
-
-    <h2 class="section-title" id="services">
-        🎓 Student Services
-    </h2>
-
-
-    <div class="card">
-
-        <h3>📚 Tutoring</h3>
-
-        <p>
-            Find tutors who can help with your academic needs.
-        </p>
-
-        <h4>Available Tutor</h4>
-
-        <p>
-            <strong>Maths & Physics Tutor</strong>
-        </p>
-
-        <p class="small-text">
-            Available for secondary school students.
-        </p>
-
-        <a href="https://wa.me/2348149239500" class="button">
-            Contact Tutor
-        </a>
-
-    </div>
-
-
-    <div class="card">
-
-        <h3>📱 Phone Repair</h3>
-
-        <p>
-            Screen replacement, battery replacement and phone repairs.
-        </p>
-
-        <a href="https://wa.me/2349132756617" class="button">
-            Contact Provider
-        </a>
-
-    </div>
-
-
-    <div class="card">
-
-        <h3>💻 Laptop Repair</h3>
-
-        <p>
-            Laptop repairs, software installation and troubleshooting.
-        </p>
-
-        <a href="https://wa.me/2349132756617" class="button">
-            Contact Provider
-        </a>
-
-    </div>
-
-
-    <div class="card">
-
-        <h3>💻 Computer Services</h3>
-
-        <p>
-            Get help with computer-related services.
-        </p>
-
-        <a href="https://wa.me/2349132756617" class="button">
-            Get Computer Help
-        </a>
-
-    </div>
-
-
-    <div class="card">
-
-        <h3>🖨️ Printing & Typing</h3>
-
-        <p>
-            Find printing and typing services.
-        </p>
-
-        <a href="https://wa.me/2349132756617" class="button">
-            Find Printing Service
-        </a>
-
-    </div>
-
-
-    <div class="card">
-
-        <h3>🏠 Student Accommodation</h3>
-
-        <p>
-            Find student accommodation and housing information.
-        </p>
-
-        <a href="https://wa.me/2349132756617" class="button">
-            Find Accommodation
-        </a>
-
-    </div>
-
-
-
-    <!-- LISTING PLANS -->
+    <!-- ABOUT -->
 
     <h2 class="section-title">
-        📋 Service Listings
+        🤝 Welcome to Student Connect
     </h2>
+
+    <p class="intro">
+        Student Connect is a platform designed to connect people,
+        students, businesses, companies, organizations and
+        service providers.
+        Whether you are looking for a service, promoting a business,
+        offering a skill or advertising a product, you can connect
+        with people through our platform.
+    </p>
+
+
+    <div class="world">
+
+        <h3>🌎 A Platform Without Borders</h3>
+
+        <p>
+            Individuals and organizations can use Student Connect
+            from Nigeria and other countries around the world.
+        </p>
+
+    </div>
+
+
+
+    <!-- SERVICES -->
+
+    <h2 class="section-title" id="services">
+        🔎 Services & Categories
+    </h2>
+
+    <p class="intro">
+        Explore different services and opportunities available
+        through Student Connect.
+    </p>
+
+
+    <div class="service-grid">
+
+
+        <div class="service-box">
+
+            <h3>🎓 Education & Tutoring</h3>
+
+            <p>
+                Tutors, teachers, educational services,
+                academic support and learning opportunities.
+            </p>
+
+            <a
+                href="https://wa.me/2349132756617"
+                class="button">
+
+                Find a Service
+
+            </a>
+
+        </div>
+
+
+        <div class="service-box">
+
+            <h3>📱 Phone Services</h3>
+
+            <p>
+                Phone repairs, accessories, software services
+                and other mobile-related services.
+            </p>
+
+            <a
+                href="https://wa.me/2349132756617"
+                class="button">
+
+                Find a Provider
+
+            </a>
+
+        </div>
+
+
+        <div class="service-box">
+
+            <h3>💻 Technology & Computer</h3>
+
+            <p>
+                Computer services, laptop repairs, software,
+                websites and technology solutions.
+            </p>
+
+            <a
+                href="https://wa.me/2349132756617"
+                class="button">
+
+                Get Technology Help
+
+            </a>
+
+        </div>
+
+
+        <div class="service-box">
+
+            <h3>🖨️ Business Services</h3>
+
+            <p>
+                Printing, typing, design, marketing,
+                business support and professional services.
+            </p>
+
+            <a
+                href="https://wa.me/2349132756617"
+                class="button">
+
+                Find a Service
+
+            </a>
+
+        </div>
+
+
+        <div class="service-box">
+
+            <h3>🏠 Property & Accommodation</h3>
+
+            <p>
+                Accommodation, property information and
+                housing-related services.
+            </p>
+
+            <a
+                href="https://wa.me/2349132756617"
+                class="button">
+
+                Find Property Services
+
+            </a>
+
+        </div>
+
+
+        <div class="service-box">
+
+            <h3>🛍️ Products & Businesses</h3>
+
+            <p>
+                Businesses and individuals can promote products,
+                brands and services.
+            </p>
+
+            <a
+                href="https://wa.me/2349132756617"
+                class="button">
+
+                Discover Businesses
+
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- LISTING -->
+
+    <h2 class="section-title">
+        📋 List Your Business or Service
+    </h2>
+
+    <p class="intro">
+        Are you a student, individual, business owner,
+        company, organization or service provider?
+        You can list what you offer on Student Connect.
+    </p>
 
 
     <div class="card">
@@ -310,15 +421,24 @@
         </p>
 
         <p>
-            List your service or business on Student Connect
-            at no cost.
+            List your business, organization, product,
+            skill or service at no cost.
         </p>
 
-        <a href="#list-service" class="button blue-button">
-            Get Free Listing
+        <p class="small-text">
+            Available to individuals and organizations.
+        </p>
+
+        <a
+            href="#list-service"
+            class="button blue-button">
+
+            Create Free Listing
+
         </a>
 
     </div>
+
 
 
     <div class="card featured">
@@ -330,8 +450,8 @@
         </p>
 
         <p>
-            Get your service highlighted so more people
-            can discover it.
+            Have your business or service highlighted
+            for greater visibility on Student Connect.
         </p>
 
         <a
@@ -346,10 +466,10 @@
 
 
 
-    <!-- COMPANY ADVERTISING -->
+    <!-- BUSINESS ADVERTISING -->
 
     <h2 class="section-title">
-        🏢 Business Advertising
+        🏢 Business & Company Advertising
     </h2>
 
 
@@ -362,15 +482,48 @@
         </p>
 
         <p>
-            Promote your company, product or service
-            through Student Connect.
+            Promote your company, product, brand or service
+            to people through Student Connect.
+        </p>
+
+        <p class="small-text">
+            Suitable for businesses, companies and organizations.
         </p>
 
         <a
             href="https://wa.me/2349132756617?text=Hello%20Student%20Connect,%20I%20want%20to%20advertise%20my%20company%20or%20product."
             class="button">
 
-            Advertise My Product
+            Advertise My Business
+
+        </a>
+
+    </div>
+
+
+
+    <!-- ORGANIZATIONS -->
+
+    <h2 class="section-title">
+        🌐 Organizations & Professionals
+    </h2>
+
+
+    <div class="card">
+
+        <h3>🤝 Promote Your Organization</h3>
+
+        <p>
+            Organizations, groups, professionals and service
+            providers can use Student Connect to introduce
+            their work and connect with interested people.
+        </p>
+
+        <a
+            href="https://wa.me/2349132756617?text=Hello%20Student%20Connect,%20I%20want%20to%20list%20my%20organization%20or%20professional%20service."
+            class="button blue-button">
+
+            Promote My Organization
 
         </a>
 
@@ -386,7 +539,7 @@
 
         <p>
             Need a Facebook Page for your business,
-            organization or brand?
+            organization, brand or personal project?
         </p>
 
         <p>
@@ -405,22 +558,24 @@
 
 
 
-    <!-- SERVICE FORM -->
+    <!-- LISTING FORM -->
 
     <h2 class="section-title" id="list-service">
-        📝 List Your Service
+        📝 Create Your Free Listing
     </h2>
 
 
     <div class="card">
 
         <p>
-            Submit your service or business details.
+            List your business, organization, product,
+            skill or service.
             <strong>Basic listing is FREE.</strong>
         </p>
 
 
         <form onsubmit="sendToWhatsApp(); return false;">
+
 
             <label>Your Name</label>
 
@@ -431,45 +586,55 @@
                 required>
 
 
-            <label>Service or Business Name</label>
+            <label>Business / Organization / Service Name</label>
 
             <input
                 id="service"
                 type="text"
-                placeholder="What service do you offer?"
+                placeholder="Enter the name"
                 required>
 
 
-            <label>WhatsApp Number</label>
+            <label>WhatsApp or Contact Number</label>
 
             <input
                 id="phone"
                 type="tel"
-                placeholder="Enter your WhatsApp number"
+                placeholder="Enter your contact number"
                 required>
 
 
-            <label>Location</label>
+            <label>Country</label>
+
+            <input
+                id="country"
+                type="text"
+                placeholder="Enter your country"
+                required>
+
+
+            <label>City / Location</label>
 
             <input
                 id="location"
                 type="text"
-                placeholder="Where are you located?"
+                placeholder="Enter your city or location"
                 required>
 
 
-            <label>Short Description</label>
+            <label>What do you offer?</label>
 
             <textarea
                 id="description"
                 rows="4"
-                placeholder="Describe your service or business"
+                placeholder="Describe your business, organization, product or service"
                 required></textarea>
 
 
             <button type="submit">
                 Submit Free Listing
             </button>
+
 
         </form>
 
@@ -480,7 +645,7 @@
     <!-- CONTACT -->
 
     <h2 class="section-title">
-        📞 Contact Us
+        📞 Contact Student Connect
     </h2>
 
 
@@ -488,14 +653,14 @@
 
         <p>
             Have a question, want to advertise,
-            or need help with a service?
+            list a business or promote an organization?
         </p>
 
         <a
             href="https://wa.me/2349132756617"
             class="button">
 
-            Contact Student Connect
+            Contact Us on WhatsApp
 
         </a>
 
@@ -508,12 +673,15 @@
 
 <footer>
 
+    <h3>🌍 Student Connect</h3>
+
     <p>
-        © 2026 Student Connect
+        Connecting people, businesses, organizations
+        and services worldwide.
     </p>
 
     <p>
-        Connecting students, businesses and services.
+        © 2026 Student Connect
     </p>
 
 </footer>
@@ -533,6 +701,9 @@ function sendToWhatsApp() {
     var phone =
         document.getElementById("phone").value;
 
+    var country =
+        document.getElementById("country").value;
+
     var location =
         document.getElementById("location").value;
 
@@ -541,18 +712,22 @@ function sendToWhatsApp() {
 
 
     var message =
-        "NEW FREE STUDENT CONNECT LISTING%0A%0A" +
+        "NEW STUDENT CONNECT LISTING%0A%0A" +
 
         "Name: " +
         encodeURIComponent(name) +
         "%0A" +
 
-        "Service/Business: " +
+        "Business/Organization/Service: " +
         encodeURIComponent(service) +
         "%0A" +
 
-        "WhatsApp: " +
+        "Contact: " +
         encodeURIComponent(phone) +
+        "%0A" +
+
+        "Country: " +
+        encodeURIComponent(country) +
         "%0A" +
 
         "Location: " +
@@ -575,4 +750,5 @@ function sendToWhatsApp() {
 
 
 </body>
+
 </html>
