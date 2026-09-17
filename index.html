@@ -3,9 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Student Connect | Global Services & Business Platform</title>
+    <title>Student Connect | Global Services & Business Directory</title>
 
     <style>
 
@@ -101,6 +102,8 @@
             border-radius: 7px;
             margin-top: 8px;
             font-weight: bold;
+            border: none;
+            cursor: pointer;
         }
 
         .blue-button {
@@ -139,6 +142,7 @@
             border: 1px solid #ccc;
             border-radius: 7px;
             font-size: 15px;
+            background: white;
         }
 
         textarea {
@@ -149,7 +153,7 @@
             font-weight: bold;
         }
 
-        button {
+        form button {
             width: 100%;
             padding: 14px;
             border: none;
@@ -175,6 +179,131 @@
             margin-top: 25px;
         }
 
+
+        /* DIRECTORY */
+
+        .directory-box {
+            background: white;
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+            margin-bottom: 25px;
+        }
+
+        .directory-box h3 {
+            margin-top: 0;
+            color: #123c69;
+        }
+
+        .directory-button {
+            width: 100%;
+            background: #123c69;
+            color: white;
+            padding: 14px;
+            border: none;
+            border-radius: 7px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .directory-info {
+            text-align: center;
+            color: #666;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .listing-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .business-card {
+            background: white;
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+            border-left: 5px solid #16803a;
+        }
+
+        .business-card.featured-business {
+            border-left-color: #d89216;
+        }
+
+        .business-card h3 {
+            color: #123c69;
+            margin: 0 0 8px;
+        }
+
+        .business-category {
+            color: #16803a;
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .business-location {
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .business-description {
+            line-height: 1.6;
+        }
+
+        .featured-label {
+            display: inline-block;
+            background: #d89216;
+            color: white;
+            padding: 5px 9px;
+            border-radius: 5px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .business-card a {
+            color: #123c69;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+
+        /* CATEGORY GRID */
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .category-button {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            color: #123c69;
+            font-weight: bold;
+            text-align: left;
+            cursor: pointer;
+        }
+
+        .category-button:hover {
+            background: #eaf2fa;
+        }
+
+
+        /* HOW IT WORKS */
+
+        .step-number {
+            color: #16803a;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+
         footer {
             background: #123c69;
             color: white;
@@ -182,6 +311,7 @@
             padding: 30px 20px;
             margin-top: 40px;
         }
+
 
         @media (max-width: 700px) {
 
@@ -193,12 +323,15 @@
                 font-size: 16px;
             }
 
-            .service-grid {
+            .service-grid,
+            .listing-grid,
+            .category-grid {
                 grid-template-columns: 1fr;
             }
 
             .card,
-            .service-box {
+            .service-box,
+            .business-card {
                 padding: 19px;
             }
 
@@ -221,11 +354,12 @@
         organizations and service providers in one global platform.
     </p>
 
-    <a href="#services" class="hero-button">
-        Explore the Platform
+    <a href="#directory" class="hero-button">
+        Find a Business or Service
     </a>
 
 </header>
+
 
 
 <div class="container">
@@ -238,12 +372,11 @@
     </h2>
 
     <p class="intro">
-        Student Connect is a platform designed to connect people,
-        students, businesses, companies, organizations and
-        service providers.
-        Whether you are looking for a service, promoting a business,
-        offering a skill or advertising a product, you can connect
-        with people through our platform.
+        Student Connect is a global platform designed to connect
+        people with businesses, companies, organizations,
+        professionals and service providers.
+        Search the directory to find genuine businesses and
+        services by category or location.
     </p>
 
 
@@ -252,9 +385,353 @@
         <h3>🌎 A Platform Without Borders</h3>
 
         <p>
-            Individuals and organizations can use Student Connect
-            from Nigeria and other countries around the world.
+            Businesses, professionals, organizations and service
+            providers can join Student Connect from Nigeria and
+            other countries around the world.
         </p>
+
+    </div>
+
+
+
+    <!-- DIRECTORY -->
+
+    <h2 class="section-title" id="directory">
+        🔎 Business & Services Directory
+    </h2>
+
+    <p class="intro">
+        Search for a business, professional, organization
+        or service by name, category, country or location.
+    </p>
+
+
+    <div class="directory-box">
+
+        <h3>
+            🔍 Search Student Connect
+        </h3>
+
+
+        <label>
+            Business or Service Name
+        </label>
+
+        <input
+            type="text"
+            id="searchName"
+            placeholder="Example: computer repair, restaurant..."
+        >
+
+
+        <label>
+            Category
+        </label>
+
+        <select id="searchCategory">
+
+            <option value="">
+                All Categories
+            </option>
+
+            <option value="Education & Tutoring">
+                Education & Tutoring
+            </option>
+
+            <option value="Technology & Computer">
+                Technology & Computer
+            </option>
+
+            <option value="Phone Services">
+                Phone Services
+            </option>
+
+            <option value="Food & Restaurants">
+                Food & Restaurants
+            </option>
+
+            <option value="Health & Medical">
+                Health & Medical
+            </option>
+
+            <option value="Beauty & Personal Care">
+                Beauty & Personal Care
+            </option>
+
+            <option value="Property & Accommodation">
+                Property & Accommodation
+            </option>
+
+            <option value="Automotive">
+                Automotive
+            </option>
+
+            <option value="Shopping & Retail">
+                Shopping & Retail
+            </option>
+
+            <option value="Construction">
+                Construction
+            </option>
+
+            <option value="Professional Services">
+                Professional Services
+            </option>
+
+            <option value="Transport & Logistics">
+                Transport & Logistics
+            </option>
+
+            <option value="Travel & Tourism">
+                Travel & Tourism
+            </option>
+
+            <option value="Agriculture">
+                Agriculture
+            </option>
+
+            <option value="Entertainment">
+                Entertainment
+            </option>
+
+            <option value="Organizations & Nonprofits">
+                Organizations & Nonprofits
+            </option>
+
+            <option value="Finance & Insurance">
+                Finance & Insurance
+            </option>
+
+            <option value="Marketing & Media">
+                Marketing & Media
+            </option>
+
+            <option value="Security & Safety">
+                Security & Safety
+            </option>
+
+            <option value="Wholesale & Suppliers">
+                Wholesale & Suppliers
+            </option>
+
+            <option value="Online Services">
+                Online Services
+            </option>
+
+            <option value="Other">
+                Other
+            </option>
+
+        </select>
+
+
+        <label>
+            Country
+        </label>
+
+        <input
+            type="text"
+            id="searchCountry"
+            placeholder="Example: Nigeria"
+        >
+
+
+        <label>
+            State / Region / City
+        </label>
+
+        <input
+            type="text"
+            id="searchLocation"
+            placeholder="Example: Abuja, Lagos, Accra..."
+        >
+
+
+        <button
+            type="button"
+            class="directory-button"
+            onclick="searchDirectory()">
+
+            Search Directory
+
+        </button>
+
+    </div>
+
+
+    <div
+        class="directory-info"
+        id="directoryCount">
+
+        0 approved listings
+
+    </div>
+
+
+    <div id="directoryResults">
+
+        <div class="directory-info">
+
+            <h3>
+                📋 Student Connect Directory
+            </h3>
+
+            <p>
+                No approved business listings have been
+                published yet.
+            </p>
+
+            <p>
+                Genuine businesses, professionals and
+                organizations can submit their information
+                below for review.
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- CATEGORIES -->
+
+    <h2 class="section-title">
+        📂 Browse Categories
+    </h2>
+
+    <p class="intro">
+        Choose a category to search for approved businesses
+        and services.
+    </p>
+
+
+    <div class="category-grid">
+
+        <button
+            class="category-button"
+            onclick="chooseCategory('Education & Tutoring')">
+            🎓 Education & Tutoring
+        </button>
+
+        <button
+            class="category-button"
+            onclick="chooseCategory('Technology & Computer')">
+            💻 Technology & Computer
+        </button>
+
+        <button
+            class="category-button"
+            onclick="chooseCategory('Phone Services')">
+            📱 Phone Services
+        </button>
+
+        <button
+            class="category-button"
+            onclick="chooseCategory('Food & Restaurants')">
+            🍴 Food & Restaurants
+        </button>
+
+        <button
+            class="category-button"
+            onclick="chooseCategory('Health & Medical')">
+            🏥 Health & Medical
+        </button>
+
+        <button
+            class="category-button"
+            onclick="chooseCategory('Beauty & Personal Care')">
+            💇 Beauty & Personal Care
+        </button>
+
+        <button
+            class="category-button"
+            onclick="chooseCategory('Property & Accommodation')">
+            🏠 Property & Accommodation
+        </button>
+
+        <button
+            class="category-button"
+            onclick="chooseCategory('Automotive')">
+            🚗 Automotive
+        </button>
+
+        <button
+            class="category-button"
+            onclick="chooseCategory('Shopping & Retail')">
+            🛍️ Shopping & Retail
+        </button>
+
+        <button
+            class="category-button"
+            onclick="chooseCategory('Construction')">
+            🏗️ Construction
+        </button>
+
+        <button
+            class="category-button"
+            onclick="chooseCategory('Professional Services')">
+            💼 Professional Services
+        </button>
+
+        <button
+            class="category-button"
+            onclick="chooseCategory('Transport & Logistics')">
+            🚚 Transport & Logistics
+        </button>
+
+        <button
+            class="category-button"
+            onclick="chooseCategory('Travel & Tourism')">
+            ✈️ Travel & Tourism
+        </button>
+
+        <button
+            class="category-button"
+            onclick="chooseCategory('Agriculture')">
+            🌾 Agriculture
+        </button>
+
+        <button
+            class="category-button"
+            onclick="chooseCategory('Entertainment')">
+            🎵 Entertainment
+        </button>
+
+        <button
+            class="category-button"
+            onclick="chooseCategory('Organizations & Nonprofits')">
+            🤝 Organizations & Nonprofits
+        </button>
+
+        <button
+            class="category-button"
+            onclick="chooseCategory('Finance & Insurance')">
+            💰 Finance & Insurance
+        </button>
+
+        <button
+            class="category-button"
+            onclick="chooseCategory('Marketing & Media')">
+            📢 Marketing & Media
+        </button>
+
+        <button
+            class="category-button"
+            onclick="chooseCategory('Security & Safety')">
+            🛡️ Security & Safety
+        </button>
+
+        <button
+            class="category-button"
+            onclick="chooseCategory('Wholesale & Suppliers')">
+            📦 Wholesale & Suppliers
+        </button>
+
+        <button
+            class="category-button"
+            onclick="chooseCategory('Online Services')">
+            🌐 Online Services
+        </button>
 
     </div>
 
@@ -262,14 +739,9 @@
 
     <!-- SERVICES -->
 
-    <h2 class="section-title" id="services">
+    <h2 class="section-title">
         🔎 Services & Categories
     </h2>
-
-    <p class="intro">
-        Explore different services and opportunities available
-        through Student Connect.
-    </p>
 
 
     <div class="service-grid">
@@ -277,120 +749,132 @@
 
         <div class="service-box">
 
-            <h3>🎓 Education & Tutoring</h3>
+            <h3>
+                🎓 Education & Tutoring
+            </h3>
 
             <p>
                 Tutors, teachers, educational services,
                 academic support and learning opportunities.
             </p>
 
-            <a
-                href="https://wa.me/2349132756617"
-                class="button">
+            <button
+                class="button"
+                onclick="chooseCategory('Education & Tutoring')">
 
                 Find a Service
 
-            </a>
+            </button>
 
         </div>
 
 
         <div class="service-box">
 
-            <h3>📱 Phone Services</h3>
+            <h3>
+                📱 Phone Services
+            </h3>
 
             <p>
                 Phone repairs, accessories, software services
                 and other mobile-related services.
             </p>
 
-            <a
-                href="https://wa.me/2349132756617"
-                class="button">
+            <button
+                class="button"
+                onclick="chooseCategory('Phone Services')">
 
                 Find a Provider
 
-            </a>
+            </button>
 
         </div>
 
 
         <div class="service-box">
 
-            <h3>💻 Technology & Computer</h3>
+            <h3>
+                💻 Technology & Computer
+            </h3>
 
             <p>
                 Computer services, laptop repairs, software,
                 websites and technology solutions.
             </p>
 
-            <a
-                href="https://wa.me/2349132756617"
-                class="button">
+            <button
+                class="button"
+                onclick="chooseCategory('Technology & Computer')">
 
-                Get Technology Help
+                Find Technology Help
 
-            </a>
+            </button>
 
         </div>
 
 
         <div class="service-box">
 
-            <h3>🖨️ Business Services</h3>
+            <h3>
+                🖨️ Professional Services
+            </h3>
 
             <p>
                 Printing, typing, design, marketing,
                 business support and professional services.
             </p>
 
-            <a
-                href="https://wa.me/2349132756617"
-                class="button">
+            <button
+                class="button"
+                onclick="chooseCategory('Professional Services')">
 
                 Find a Service
 
-            </a>
+            </button>
 
         </div>
 
 
         <div class="service-box">
 
-            <h3>🏠 Property & Accommodation</h3>
+            <h3>
+                🏠 Property & Accommodation
+            </h3>
 
             <p>
                 Accommodation, property information and
                 housing-related services.
             </p>
 
-            <a
-                href="https://wa.me/2349132756617"
-                class="button">
+            <button
+                class="button"
+                onclick="chooseCategory('Property & Accommodation')">
 
                 Find Property Services
 
-            </a>
+            </button>
 
         </div>
 
 
         <div class="service-box">
 
-            <h3>🛍️ Products & Businesses</h3>
+            <h3>
+                🛍️ Products & Businesses
+            </h3>
 
             <p>
-                Businesses and individuals can promote products,
-                brands and services.
+                Businesses and individuals can promote
+                products, brands and services.
             </p>
 
-            <a
-                href="https://wa.me/2349132756617"
-                class="button">
+            <button
+                class="button"
+                onclick="chooseCategory('Shopping & Retail')">
 
                 Discover Businesses
 
-            </a>
+            </button>
 
         </div>
 
@@ -399,34 +883,42 @@
 
 
 
-    <!-- LISTING -->
+    <!-- LISTING OPTIONS -->
 
     <h2 class="section-title">
         📋 List Your Business or Service
     </h2>
 
+
     <p class="intro">
+
         Are you a student, individual, business owner,
         company, organization or service provider?
-        You can list what you offer on Student Connect.
+
+        Submit your genuine business or service to
+        Student Connect.
+
     </p>
 
 
     <div class="card">
 
-        <h3>🆓 Basic Listing</h3>
+        <h3>
+            🆓 Basic Listing
+        </h3>
 
         <p class="price">
             FREE
         </p>
 
         <p>
-            List your business, organization, product,
-            skill or service at no cost.
+            Submit your business, organization, product,
+            skill or service for consideration.
         </p>
 
         <p class="small-text">
-            Available to individuals and organizations.
+            Your information will be reviewed before
+            publication.
         </p>
 
         <a
@@ -443,22 +935,24 @@
 
     <div class="card featured">
 
-        <h3>⭐ Featured Listing</h3>
+        <h3>
+            ⭐ Featured Listing
+        </h3>
 
         <p class="price">
-            ₦2,000
+            ₦5,000
         </p>
 
         <p>
-            Have your business or service highlighted
-            for greater visibility on Student Connect.
+            Have your approved business or service
+            highlighted for greater visibility.
         </p>
 
         <a
-            href="https://wa.me/2349132756617?text=Hello%20Student%20Connect,%20I%20want%20a%20Featured%20Listing%20for%20%E2%82%A62,000."
+            href="https://wa.me/2349132756617?text=Hello%20Student%20Connect%2C%20I%20want%20a%20Featured%20Listing%20for%20%E2%82%A65%2C000."
             class="button gold-button">
 
-            Get Featured — ₦2,000
+            Get Featured — ₦5,000
 
         </a>
 
@@ -466,7 +960,7 @@
 
 
 
-    <!-- BUSINESS ADVERTISING -->
+    <!-- ADVERTISING -->
 
     <h2 class="section-title">
         🏢 Business & Company Advertising
@@ -475,23 +969,26 @@
 
     <div class="card">
 
-        <h3>📢 Company & Product Advertising</h3>
+        <h3>
+            📢 Company & Product Advertising
+        </h3>
 
         <p class="price">
             $100
         </p>
 
         <p>
-            Promote your company, product, brand or service
-            to people through Student Connect.
+            Promote your company, product, brand or
+            service through Student Connect.
         </p>
 
         <p class="small-text">
-            Suitable for businesses, companies and organizations.
+            Suitable for businesses, companies
+            and organizations.
         </p>
 
         <a
-            href="https://wa.me/2349132756617?text=Hello%20Student%20Connect,%20I%20want%20to%20advertise%20my%20company%20or%20product."
+            href="https://wa.me/2349132756617?text=Hello%20Student%20Connect%2C%20I%20want%20to%20advertise%20my%20company%20or%20product%20for%20%24100."
             class="button">
 
             Advertise My Business
@@ -511,7 +1008,9 @@
 
     <div class="card">
 
-        <h3>🤝 Promote Your Organization</h3>
+        <h3>
+            🤝 Promote Your Organization
+        </h3>
 
         <p>
             Organizations, groups, professionals and service
@@ -520,7 +1019,7 @@
         </p>
 
         <a
-            href="https://wa.me/2349132756617?text=Hello%20Student%20Connect,%20I%20want%20to%20list%20my%20organization%20or%20professional%20service."
+            href="https://wa.me/2349132756617?text=Hello%20Student%20Connect%2C%20I%20want%20to%20list%20my%20organization%20or%20professional%20service."
             class="button blue-button">
 
             Promote My Organization
@@ -535,7 +1034,9 @@
 
     <div class="card">
 
-        <h3>📱 Facebook Page Creation</h3>
+        <h3>
+            📱 Facebook Page Creation
+        </h3>
 
         <p>
             Need a Facebook Page for your business,
@@ -547,7 +1048,7 @@
         </p>
 
         <a
-            href="https://wa.me/2349132756617?text=Hello%20Student%20Connect,%20I%20need%20help%20creating%20a%20Facebook%20Page."
+            href="https://wa.me/2349132756617?text=Hello%20Student%20Connect%2C%20I%20need%20help%20creating%20a%20Facebook%20Page."
             class="button blue-button">
 
             Create My Facebook Page
@@ -560,83 +1061,315 @@
 
     <!-- LISTING FORM -->
 
-    <h2 class="section-title" id="list-service">
-        📝 Create Your Free Listing
+    <h2
+        class="section-title"
+        id="list-service">
+
+        📝 Submit Your Business to the Directory
+
     </h2>
 
 
     <div class="card">
 
         <p>
-            List your business, organization, product,
-            skill or service.
+            Provide accurate information about your
+            business, organization, product, skill or service.
             <strong>Basic listing is FREE.</strong>
         </p>
 
+        <p class="small-text">
+            Your submission will be sent directly to
+            Student Connect on WhatsApp for review.
+            Only genuine approved listings will be
+            published in the directory.
+        </p>
 
-        <form onsubmit="sendToWhatsApp(); return false;">
+
+        <form onsubmit="submitListing(event)">
 
 
-            <label>Your Name</label>
+            <label>
+                Your Name
+            </label>
 
             <input
-                id="name"
+                id="ownerName"
                 type="text"
-                placeholder="Enter your name"
+                placeholder="Your full name"
                 required>
 
 
-            <label>Business / Organization / Service Name</label>
+            <label>
+                Business / Organization / Service Name
+            </label>
 
             <input
-                id="service"
+                id="businessName"
                 type="text"
-                placeholder="Enter the name"
+                placeholder="Business or service name"
                 required>
 
 
-            <label>WhatsApp or Contact Number</label>
+            <label>
+                Business Category
+            </label>
+
+            <select
+                id="businessCategory"
+                required>
+
+                <option value="">
+                    Select a category
+                </option>
+
+                <option>
+                    Education & Tutoring
+                </option>
+
+                <option>
+                    Technology & Computer
+                </option>
+
+                <option>
+                    Phone Services
+                </option>
+
+                <option>
+                    Food & Restaurants
+                </option>
+
+                <option>
+                    Health & Medical
+                </option>
+
+                <option>
+                    Beauty & Personal Care
+                </option>
+
+                <option>
+                    Property & Accommodation
+                </option>
+
+                <option>
+                    Automotive
+                </option>
+
+                <option>
+                    Shopping & Retail
+                </option>
+
+                <option>
+                    Construction
+                </option>
+
+                <option>
+                    Professional Services
+                </option>
+
+                <option>
+                    Transport & Logistics
+                </option>
+
+                <option>
+                    Travel & Tourism
+                </option>
+
+                <option>
+                    Agriculture
+                </option>
+
+                <option>
+                    Entertainment
+                </option>
+
+                <option>
+                    Organizations & Nonprofits
+                </option>
+
+                <option>
+                    Finance & Insurance
+                </option>
+
+                <option>
+                    Marketing & Media
+                </option>
+
+                <option>
+                    Security & Safety
+                </option>
+
+                <option>
+                    Wholesale & Suppliers
+                </option>
+
+                <option>
+                    Online Services
+                </option>
+
+                <option>
+                    Other
+                </option>
+
+            </select>
+
+
+            <label>
+                WhatsApp / Contact Number
+            </label>
 
             <input
-                id="phone"
+                id="businessPhone"
                 type="tel"
-                placeholder="Enter your contact number"
+                placeholder="Business contact number"
                 required>
 
 
-            <label>Country</label>
+            <label>
+                Country
+            </label>
 
             <input
-                id="country"
+                id="businessCountry"
                 type="text"
-                placeholder="Enter your country"
+                placeholder="Example: Nigeria"
                 required>
 
 
-            <label>City / Location</label>
+            <label>
+                State / Region
+            </label>
 
             <input
-                id="location"
+                id="businessState"
                 type="text"
-                placeholder="Enter your city or location"
+                placeholder="Example: FCT"
                 required>
 
 
-            <label>What do you offer?</label>
+            <label>
+                City / Location
+            </label>
+
+            <input
+                id="businessCity"
+                type="text"
+                placeholder="Example: Abuja"
+                required>
+
+
+            <label>
+                Website or Social Media Page
+            </label>
+
+            <input
+                id="businessWebsite"
+                type="url"
+                placeholder="https://example.com (optional)">
+
+
+            <label>
+                Describe Your Business or Service
+            </label>
 
             <textarea
-                id="description"
-                rows="4"
-                placeholder="Describe your business, organization, product or service"
+                id="businessDescription"
+                rows="5"
+                placeholder="Tell people what your business or service offers..."
                 required></textarea>
 
 
             <button type="submit">
-                Submit Free Listing
+                Submit Listing for Review
             </button>
 
-
         </form>
+
+    </div>
+
+
+
+    <!-- HOW IT WORKS -->
+
+    <h2 class="section-title">
+        ⚙️ How Student Connect Works
+    </h2>
+
+
+    <div class="service-grid">
+
+
+        <div class="service-box">
+
+            <div class="step-number">
+                1️⃣ Submit
+            </div>
+
+            <h3>
+                Submit Your Business
+            </h3>
+
+            <p>
+                A business, professional or organization
+                provides its genuine information.
+            </p>
+
+        </div>
+
+
+        <div class="service-box">
+
+            <div class="step-number">
+                2️⃣ Review
+            </div>
+
+            <h3>
+                Student Connect Reviews
+            </h3>
+
+            <p>
+                Submitted information is reviewed before
+                a listing is published.
+            </p>
+
+        </div>
+
+
+        <div class="service-box">
+
+            <div class="step-number">
+                3️⃣ Publish
+            </div>
+
+            <h3>
+                Approved Listing
+            </h3>
+
+            <p>
+                Approved genuine businesses can be added
+                to the public directory.
+            </p>
+
+        </div>
+
+
+        <div class="service-box">
+
+            <div class="step-number">
+                4️⃣ Discover
+            </div>
+
+            <h3>
+                People Find You
+            </h3>
+
+            <p>
+                Visitors can search the directory by
+                business, category or location.
+            </p>
+
+        </div>
+
 
     </div>
 
@@ -657,7 +1390,7 @@
         </p>
 
         <a
-            href="https://wa.me/2349132756617"
+            href="https://wa.me/2349132756617?text=Hello%20Student%20Connect%2C%20I%20want%20to%20make%20an%20inquiry."
             class="button">
 
             Contact Us on WhatsApp
@@ -671,9 +1404,13 @@
 
 
 
+<!-- FOOTER -->
+
 <footer>
 
-    <h3>🌍 Student Connect</h3>
+    <h3>
+        🌍 Student Connect
+    </h3>
 
     <p>
         Connecting people, businesses, organizations
@@ -690,61 +1427,437 @@
 
 <script>
 
-function sendToWhatsApp() {
+
+/*
+    REAL DIRECTORY
+
+    This starts empty intentionally.
+
+    No fake or demo businesses are included.
+*/
+
+var approvedListings = [];
+
+
+
+/* DISPLAY APPROVED LISTINGS */
+
+function displayListings(listings) {
+
+    var results =
+        document.getElementById("directoryResults");
+
+    var count =
+        document.getElementById("directoryCount");
+
+
+    count.innerHTML =
+        listings.length +
+        (
+            listings.length === 1
+            ? " approved listing"
+            : " approved listings"
+        );
+
+
+    if (listings.length === 0) {
+
+        results.innerHTML =
+            '<div class="directory-info">' +
+
+            '<h3>📋 No matching approved listings</h3>' +
+
+            '<p>' +
+            'There are currently no approved businesses ' +
+            'matching your search.' +
+            '</p>' +
+
+            '<p>' +
+            'Know a genuine business that should be here? ' +
+            'Ask them to submit their listing below.' +
+            '</p>' +
+
+            '</div>';
+
+        return;
+    }
+
+
+    var html =
+        '<div class="listing-grid">';
+
+
+    for (
+        var i = 0;
+        i < listings.length;
+        i++
+    ) {
+
+        var business =
+            listings[i];
+
+
+        html +=
+            '<div class="business-card ' +
+            (
+                business.featured
+                ? 'featured-business'
+                : ''
+            ) +
+            '">';
+
+
+        if (business.featured) {
+
+            html +=
+                '<div class="featured-label">' +
+                '⭐ FEATURED' +
+                '</div>';
+
+        }
+
+
+        html +=
+            '<h3>' +
+            escapeText(business.name) +
+            '</h3>';
+
+
+        html +=
+            '<div class="business-category">' +
+            escapeText(business.category) +
+            '</div>';
+
+
+        html +=
+            '<p class="business-location">' +
+            '📍 ' +
+            escapeText(business.city) +
+            ', ' +
+            escapeText(business.state) +
+            ', ' +
+            escapeText(business.country) +
+            '</p>';
+
+
+        html +=
+            '<p class="business-description">' +
+            escapeText(business.description) +
+            '</p>';
+
+
+        if (business.phone) {
+
+            html +=
+                '<p>📞 ' +
+                '<a href="https://wa.me/' +
+                cleanPhone(business.phone) +
+                '">' +
+                'Contact Business' +
+                '</a>' +
+                '</p>';
+
+        }
+
+
+        if (business.website) {
+
+            html +=
+                '<p>🌐 ' +
+                '<a href="' +
+                escapeAttribute(business.website) +
+                '">' +
+                'Visit Website' +
+                '</a>' +
+                '</p>';
+
+        }
+
+
+        html +=
+            '</div>';
+
+    }
+
+
+    html +=
+        '</div>';
+
+
+    results.innerHTML =
+        html;
+
+}
+
+
+
+/* SEARCH DIRECTORY */
+
+function searchDirectory() {
 
     var name =
-        document.getElementById("name").value;
+        document
+        .getElementById("searchName")
+        .value
+        .toLowerCase()
+        .trim();
 
-    var service =
-        document.getElementById("service").value;
 
-    var phone =
-        document.getElementById("phone").value;
+    var category =
+        document
+        .getElementById("searchCategory")
+        .value
+        .toLowerCase()
+        .trim();
+
 
     var country =
-        document.getElementById("country").value;
+        document
+        .getElementById("searchCountry")
+        .value
+        .toLowerCase()
+        .trim();
+
 
     var location =
-        document.getElementById("location").value;
+        document
+        .getElementById("searchLocation")
+        .value
+        .toLowerCase()
+        .trim();
+
+
+    var filtered = [];
+
+
+    for (
+        var i = 0;
+        i < approvedListings.length;
+        i++
+    ) {
+
+        var business =
+            approvedListings[i];
+
+
+        var businessName =
+            String(business.name).toLowerCase();
+
+
+        var businessCategory =
+            String(business.category).toLowerCase();
+
+
+        var businessCountry =
+            String(business.country).toLowerCase();
+
+
+        var businessLocation =
+            (
+                String(business.city) +
+                " " +
+                String(business.state)
+            ).toLowerCase();
+
+
+        var nameMatch =
+            name === "" ||
+            businessName.indexOf(name) !== -1;
+
+
+        var categoryMatch =
+            category === "" ||
+            businessCategory === category;
+
+
+        var countryMatch =
+            country === "" ||
+            businessCountry.indexOf(country) !== -1;
+
+
+        var locationMatch =
+            location === "" ||
+            businessLocation.indexOf(location) !== -1;
+
+
+        if (
+            nameMatch &&
+            categoryMatch &&
+            countryMatch &&
+            locationMatch
+        ) {
+
+            filtered.push(business);
+
+        }
+
+    }
+
+
+    displayListings(filtered);
+
+}
+
+
+
+/* CATEGORY SEARCH */
+
+function chooseCategory(category) {
+
+    document
+        .getElementById("searchCategory")
+        .value = category;
+
+
+    searchDirectory();
+
+
+    document
+        .getElementById("directory")
+        .scrollIntoView({
+            behavior: "smooth"
+        });
+
+}
+
+
+
+/* SUBMIT LISTING */
+
+function submitListing(event) {
+
+    event.preventDefault();
+
+
+    var ownerName =
+        document.getElementById("ownerName").value;
+
+    var businessName =
+        document.getElementById("businessName").value;
+
+    var category =
+        document.getElementById("businessCategory").value;
+
+    var phone =
+        document.getElementById("businessPhone").value;
+
+    var country =
+        document.getElementById("businessCountry").value;
+
+    var state =
+        document.getElementById("businessState").value;
+
+    var city =
+        document.getElementById("businessCity").value;
+
+    var website =
+        document.getElementById("businessWebsite").value;
 
     var description =
-        document.getElementById("description").value;
+        document.getElementById("businessDescription").value;
 
 
     var message =
-        "NEW STUDENT CONNECT LISTING%0A%0A" +
+        "NEW STUDENT CONNECT DIRECTORY LISTING" +
+        "\n\n" +
 
-        "Name: " +
-        encodeURIComponent(name) +
-        "%0A" +
+        "Owner/Contact Name: " +
+        ownerName +
+        "\n\n" +
 
         "Business/Organization/Service: " +
-        encodeURIComponent(service) +
-        "%0A" +
+        businessName +
+        "\n\n" +
 
-        "Contact: " +
-        encodeURIComponent(phone) +
-        "%0A" +
+        "Category: " +
+        category +
+        "\n\n" +
+
+        "Business Contact: " +
+        phone +
+        "\n\n" +
 
         "Country: " +
-        encodeURIComponent(country) +
-        "%0A" +
+        country +
+        "\n\n" +
 
-        "Location: " +
-        encodeURIComponent(location) +
-        "%0A" +
+        "State/Region: " +
+        state +
+        "\n\n" +
+
+        "City/Location: " +
+        city +
+        "\n\n" +
+
+        "Website/Social Media: " +
+        (
+            website
+            ? website
+            : "Not provided"
+        ) +
+        "\n\n" +
 
         "Description: " +
-        encodeURIComponent(description);
+        description +
+        "\n\n" +
+
+        "Please review this listing before publication.";
 
 
-    window.open(
+    var whatsappURL =
         "https://wa.me/2349132756617?text=" +
-        message,
-        "_blank"
-    );
+        encodeURIComponent(message);
+
+
+    /*
+        DIRECT REDIRECT TO WHATSAPP
+        This is more reliable than window.open()
+        inside mobile browser/app previews.
+    */
+
+    window.location.href =
+        whatsappURL;
 
 }
+
+
+
+/* SECURITY */
+
+function escapeText(text) {
+
+    return String(text || "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+
+}
+
+
+function escapeAttribute(text) {
+
+    return String(text || "")
+        .replace(/&/g, "&amp;")
+        .replace(/"/g, "&quot;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;");
+
+}
+
+
+function cleanPhone(phone) {
+
+    return String(phone || "")
+        .replace(/\D/g, "");
+
+}
+
+
+/* START DIRECTORY */
+
+displayListings(approvedListings);
 
 </script>
 
